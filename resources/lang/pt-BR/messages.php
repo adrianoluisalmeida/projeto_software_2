@@ -24,6 +24,6 @@ return [
         'title' => 'Oops! Este serviço não está disponível.',
         'message' => 'O servidor não pode processar a solicitação gerada pela sua aplicação. <br/>Tente novamente mais tarde.'
     ],
-    'more_information_contact' => 'Para mais informações entre em contato com <a href="mailto:suporte@taskka.com.br">suporte@taskka.com.br</a>'
+    'more_information_contact' => 'Para mais informações entre em contato com <a href="mailto:suporte@cidadeunida.com.br">suporte@cidadeunida.com.br</a>'
 
 ];

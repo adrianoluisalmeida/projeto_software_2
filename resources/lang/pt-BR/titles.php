@@ -12,6 +12,6 @@ return [
     '403' => 'Sem Permissão de acesso',
     '404' => 'Página não existe',
     '503' => 'Serviço não está disponível',
-    'copyright' => '<a href="taskka.com.br" class="text-white">Taskka</a>'
+    'copyright' => '<a href="cidadeunida.com.br" class="text-white">Cidade Unida</a>'
 
 ];
