@@ -1,0 +1,52 @@
+/* here you can put your own css to customize and override the theme */
+
+.no-padding {
+    padding: 0px;
+}
+
+.no-padding-right {
+    padding-right: 0px;
+
+}
+
+.copy-footer {
+    color: #fff;
+}
+
+.copy-footer a {
+    color: #f1f1f1;
+}
+
+.page-404 {
+    margin-top: 100px;
+}
+
+.page-404 .details {
+    color: #fff;
+}
+
+.page-404 .number,
+.page-403 .number {
+    font-size: 40px;
+    font-weight: bold;
+    color: #c1c1c1;
+}
+
+.form-horizontal .form-group {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+@media (min-width: 992px) {
+    .margin-top-340-negative {
+        margin-top: -340px !important;
+    }
+    .margin-top-200-negative {
+        margin-top: -200px !important;
+    }
+
+}
+
+.no-margin{
+    margin: 0 !important;
+}
