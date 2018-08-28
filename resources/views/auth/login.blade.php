@@ -81,7 +81,7 @@
         {!! Form::close() !!}
     </div>
     <div class="col-sm-12 text-center copy-footer" style="margin-top: 30px; color: #fff">
-        <p> {{ date('Y') }} &copy; <a href="http://www.taskka.com.br">Taskka</a> - Sites e Marketing Digital</p>
+        <p> {{ date('Y') }} &copy; <a href="http://www.cidadeunida.com.br">Cidade Unida</a></p>
     </div>
 @endsection
 

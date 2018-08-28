@@ -163,6 +163,8 @@ return [
         \Artesaos\Defender\Providers\DefenderServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 
+        Laravel\Passport\PassportServiceProvider::class,
+
 
     ],
 
