@@ -68,7 +68,7 @@ mix.scripts(
         'resources/assets/css/admin/style-responsive.css',
         'resources/assets/css/admin/plugins.css',
         'resources/assets/css/admin/login.css',
-        'resources/assets/css/admin/themes/grey.css',
+        'resources/assets/css/admin/themes/light.css',
         'resources/assets/css/admin/plugins/jquery-multi-select/multi-select.css',
         'resources/assets/css/admin/plugins/bootstrap-switch/bootstrap-switch.css',
         'resources/assets/css/admin/plugins/dropzone.css',

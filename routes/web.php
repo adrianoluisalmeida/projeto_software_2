@@ -19,7 +19,7 @@ Route::get('a-triunfo', 'HomeController@about');
 
 Auth::routes();
 
-Route::group(['middleware' => ['auth', 'needsRole', 'authorize'], 'is' => 'admin', 'prefix' => 'admin'], function(){
+Route::group(['middleware' => ['auth', 'authorize'], 'prefix' => 'admin'], function(){
     Route::get('/', 'Admin\HomeController@index');
     Route::get('/home', 'Admin\HomeController@index');
 

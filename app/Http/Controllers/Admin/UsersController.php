@@ -3,20 +3,22 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\RoleModel;
+use App\Services\UserService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+
 
 class UsersController extends Controller
 {
 
+    private $service;
     private $role;
 
-    public function __construct(RoleModel $roleModel)
+    public function __construct(RoleModel $roleModel, UserService $userService)
     {
         $this->role = $roleModel;
+        $this->service = $userService;
     }
 
     /**
@@ -26,7 +28,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = $this->service->all();
 
         return view('admin/users/index', compact('users'));
     }
@@ -50,24 +52,13 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
+        $result = $this->service->store($request);
 
-        $this->validate($request, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users,email',
-            'password' => 'confirmed',
-            'role' => 'required'
-        ]);
+        if($result->getStatusCode() == 201)
+            return redirect()->route('users.index')->with('message-success', __('messages.success.store'));
+        else
+            return redirect()->back()->with('message-error', __('messages.error.store'))->withInput();
 
-        $user = User::create([
-            'name' => $request->get('name'),
-            'email' => $request->get('email'),
-            'password' => Hash::make($request->get('password'))
-        ]);
-
-
-        $user->syncRoles($request->get('role'));
-
-        return redirect()->route('users.index')->with('message-success', __('messages.success.store'));
 
     }
 
