@@ -21,5 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('users', 'Api\UserController@store');
 
 Route::group(['middleware' => ['auth:api'], 'prefix' => 'users'], function() {
-    Route::put('/{id}', 'Api\UserController@update');
+    Route::put('/', 'Api\UserController@update');
 });

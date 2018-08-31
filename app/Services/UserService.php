@@ -71,7 +71,7 @@ class UserService
             $user->name = $request->get('name');
             $user->email = $request->get('email');
             if ($request->get('password')) {
-                $user->password = $request->get('password');
+                $user->password = bcrypt($request->get('password'));
             }
             $user->save();
 
@@ -95,6 +95,7 @@ class UserService
     private function validationUser($request, $id = null){
 
         $validationEmail = is_null($id) ? 'unique:users,email' :  'unique:users,email,' . $id;
+//        dd($validationEmail);
 
         return Validator::make($request->all(), [
             'name' => 'required|max:255',

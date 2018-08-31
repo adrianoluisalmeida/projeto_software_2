@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Services\UserService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class UserController extends Controller
@@ -79,10 +80,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-//        dd($request->all());
-        $response = $this->service->update($request, $id);
+        $user = Auth::user();
+
+        $response = $this->service->update($request, $user->id);
         return $response;
     }
 
