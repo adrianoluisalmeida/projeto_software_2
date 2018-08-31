@@ -18,9 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 });
 
-//Route::get('/user', function () {
-//    v
-//})->middleware('auth:api');
+Route::post('users', 'Api\UserController@store');
 
-
-Route::resource('users', 'Api\UserController')->middleware('auth:api');
+Route::group(['middleware' => ['auth:api'], 'prefix' => 'users'], function() {
+    Route::put('/{id}', 'Api\UserController@update');
+});

@@ -20,6 +20,7 @@ class UsersTableSeeder extends Seeder
         ]);
 
         $roleAdmin = \App\Models\RoleModel::create(['name' => 'admin']);
+        $roleUser = \App\Models\RoleModel::create(['name' => 'user']);
 
         $permissionsArray = [
             [

@@ -81,6 +81,10 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
+
+
+
+
         $row = User::find($id);
         $roles = $this->role->all();
         $userRoles = $row->roles()->pluck('id')->toArray();
@@ -97,29 +101,16 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users,email,' . $id,
-            'password' => 'confirmed',
-        ]);
+        $result = $this->service->update($request, $id);
 
-        $user = User::find($id);
-        $user->name = $request->get('name');
-        $user->email = $request->get('email');
-        if ($request->get('password')) {
-            $user->password = $request->get('password');
-        }
-        $user->save();
-
-        $user->syncRoles($request->get('role'));
-
-        return redirect('admin/users')->with('message-success', __('messages.success.update'));
+        if($result->getStatusCode() == 200)
+            return redirect()->route('users.index')->with('message-success', __('messages.success.update'));
+        else
+            return redirect()->back()->with('message-error', __('messages.error.update'))->withInput();
     }
 
     public function updateMy(Request $request, $id)
     {
-
-        ;
         $this->validate($request, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users,email,' . $id,

@@ -18,7 +18,7 @@ class UserController extends Controller
 
 
 
-        /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -47,7 +47,6 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $response = $this->service->store($request);
-
         return $response;
     }
 
@@ -82,7 +81,9 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+//        dd($request->all());
+        $response = $this->service->update($request, $id);
+        return $response;
     }
 
     /**
