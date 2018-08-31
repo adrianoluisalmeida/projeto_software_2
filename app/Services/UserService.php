@@ -77,8 +77,9 @@ class UserService
 
             if(!is_null($roles))
                 $user->syncRoles($roles);
-            else
-                $user->syncRoles([2]); //user group
+
+//            else
+//                $user->syncRoles([2]); //user group
 
             return response()->json(true,
                 Response::HTTP_OK);
