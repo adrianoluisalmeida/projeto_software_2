@@ -95,12 +95,12 @@ class UserService
      */
     private function validationUser($request, $id = null){
 
-        $validationEmail = is_null($id) ? 'unique:users,email' :  'unique:users,email,' . $id;
+        $validationEmail = is_null($id) ? 'required|unique:users,email' :  '';
 //        dd($validationEmail);
 
         return Validator::make($request->all(), [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|' . $validationEmail,
+            'email' => 'email|max:255|' . $validationEmail,
             'password' => 'confirmed'
         ]);
 
