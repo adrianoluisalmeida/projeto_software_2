@@ -60,8 +60,8 @@ class UserService
 
     public function update(Request $request, $id)
     {
-
-        $validator = $this->validationUser($request, $id);
+        $user = Auth::user();
+        $validator = $this->validationUser($request, $user->id);
         $roles = $request->get('role');
 
         if ($validator->fails()) {
