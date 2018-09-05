@@ -69,7 +69,7 @@ class UserService
         } else {
             $user = User::find($id);
             $user->name = $request->get('name');
-            $user->email = $request->get('email');
+//            $user->email = $request->get('email');
             if ($request->get('password')) {
                 $user->password = bcrypt($request->get('password'));
             }
