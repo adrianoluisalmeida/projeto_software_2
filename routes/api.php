@@ -20,6 +20,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('users', 'Api\UserController@store');
 
-Route::group(['middleware' => ['auth:api'], 'prefix' => 'users'], function() {
+Route::group(['middleware' => ['auth:api'], 'prefix' => 'users'], function () {
     Route::put('/', 'Api\UserController@update');
+});
+
+Route::group(['middleware' => ['auth:api']], function () {
+    Route::group(['prefix' => 'entities'], function () {
+        Route::get('/{city?}', 'Api\EntitiesController@index');
+    });
+
+    Route::group(['prefix' => 'states'], function () {
+        Route::get('/', 'Api\EntitiesController@states');
+    });
 });

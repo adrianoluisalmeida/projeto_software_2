@@ -15,6 +15,10 @@ $menus = [
         ],
 //        "permission" => "super_admin"
     ],
+    "Entidades" => [
+        "url" => "/admin/entities",
+        "icon" => "icon-home"
+    ]
 
 ];
 $urlCurrent = '/' . Request::segment(1) . '/' .  Request::segment(2);

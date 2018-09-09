@@ -23,7 +23,6 @@ Route::group(['middleware' => ['auth', 'authorize'], 'prefix' => 'admin'], funct
     Route::get('/', 'Admin\HomeController@index');
     Route::get('/home', 'Admin\HomeController@index');
 
-
     //Roles Routes
     Route::group(['prefix' => 'roles'], function(){
         Route::get('/', ['uses' => 'Admin\RolesController@index', 'as' => 'roles.index']);
@@ -65,6 +64,17 @@ Route::group(['middleware' => ['auth', 'authorize'], 'prefix' => 'admin'], funct
         Route::post('/', 'Admin\UsersController@store');
         Route::put('/{id}', 'Admin\UsersController@update');
         Route::put('/my/{id}', 'Admin\UsersController@updateMy');
+    });
+
+    Route::group(['prefix' => 'entities'], function() {
+
+        Route::get('/', ['uses' => 'Admin\EntitiesController@index', 'as' => 'entities.index']);
+        Route::get('/create', ['uses' => 'Admin\EntitiesController@create', 'as' => 'entities.create']);
+        Route::get('{id}/edit', ['uses' => 'Admin\EntitiesController@edit', 'as' => 'entities.edit']);
+        Route::get('{id}', ['uses' => 'Admin\EntitiesController@destroy', 'as' => 'entities.remove']);
+
+        Route::post('/', 'Admin\EntitiesController@store');
+        Route::put('/{id}', 'Admin\EntitiesController@update');
     });
 
 

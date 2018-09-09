@@ -82,9 +82,6 @@ class UsersController extends Controller
     public function edit($id)
     {
 
-
-
-
         $row = User::find($id);
         $roles = $this->role->all();
         $userRoles = $row->roles()->pluck('id')->toArray();
