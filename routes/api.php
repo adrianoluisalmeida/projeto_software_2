@@ -32,4 +32,10 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::group(['prefix' => 'states'], function () {
         Route::get('/', 'Api\EntitiesController@states');
     });
+
+    Route::group(['prefix' => 'categories'], function () {
+        Route::get('/', 'Api\CategoriesController@index');
+    });
+
+
 });

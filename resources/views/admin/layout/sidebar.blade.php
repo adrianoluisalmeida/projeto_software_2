@@ -18,6 +18,10 @@ $menus = [
     "Entidades" => [
         "url" => "/admin/entities",
         "icon" => "icon-home"
+    ],
+    "Categorias" => [
+        "url" => "/admin/categories",
+        "icon" => "icon-home"
     ]
 
 ];

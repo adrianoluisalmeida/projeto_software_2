@@ -7,6 +7,7 @@ return [
     'home' => 'Dashboard',
     'edit' => 'Edição',
     'create' => 'Criação',
+    'categories' => 'Categorias',
     'save' => 'Salvar',
     'my_user' => 'Meu Usuário',
     '403' => 'Sem Permissão de acesso',

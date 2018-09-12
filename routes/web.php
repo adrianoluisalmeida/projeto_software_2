@@ -78,6 +78,18 @@ Route::group(['middleware' => ['auth', 'authorize'], 'prefix' => 'admin'], funct
         Route::put('/{id}', 'Admin\EntitiesController@update');
     });
 
+    Route::group(['prefix' => 'categories'], function() {
+
+        Route::get('/', ['uses' => 'Admin\CategoriesController@index', 'as' => 'categories.index']);
+        Route::get('/create', ['uses' => 'Admin\CategoriesController@create', 'as' => 'categories.create']);
+        Route::get('{id}/edit', ['uses' => 'Admin\CategoriesController@edit', 'as' => 'categories.edit']);
+//        Route::get('{id}', ['uses' => 'Admin\EntitiesController@destroy', 'as' => 'entities.remove']);
+        Route::get('{id}/remove', ['uses' => 'Admin\CategoriesController@destroy', 'as' => 'categories.remove']);
+
+        Route::post('/', 'Admin\CategoriesController@store');
+        Route::put('/{id}', 'Admin\CategoriesController@update');
+    });
+
 
 });
 
