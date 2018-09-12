@@ -58,9 +58,7 @@ class EntitiesService
         if ($validator->fails()) {
             return response()->json($validator->errors(), Response::HTTP_BAD_REQUEST);
         } else {
-
             $entity = Entity::create($request->all());
-
 
             return response()->json($entity, Response::HTTP_CREATED);
         }
@@ -68,21 +66,12 @@ class EntitiesService
 
     public function update(Request $request, $id)
     {
-
         $validator = $this->validation($request, $id);
-
-
         if ($validator->fails()) {
             return response()->json($validator->errors(), Response::HTTP_BAD_REQUEST);
         } else {
-            $entity = Entity::find($id);
-            $entity->name = $request->get('name');
-            $entity->email = $request->get('email');
-            $entity->street = $request->get('street');
-            $entity->number = $request->get('number');
-            $entity->complement = $request->get('complement');
-            $entity->city = $request->get('city');
-            $entity->save();
+            Entity::find($id)
+                ->update($request->all());
 
             return response()->json(true, Response::HTTP_OK);
         }

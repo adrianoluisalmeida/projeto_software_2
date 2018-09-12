@@ -18,8 +18,8 @@
 
 @section('content')
     <div class="col-md-12">
-        {!! Form::model($row, ['url' => ['admin/users/' . $row->id], 'class' => 'horizontal-form', 'method' => 'PUT', 'files' => true]) !!}
-        @include('admin.users.form')
+        {!! Form::model($row, ['url' => ['admin/entities/' . $row->id], 'class' => 'horizontal-form', 'method' => 'PUT', 'files' => true]) !!}
+        @include('admin.entities.form')
         {!! Form::close() !!}
     </div>
 @endsection

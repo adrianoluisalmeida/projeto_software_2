@@ -71,7 +71,7 @@ class UserService
             $user->name = $request->get('name');
 //            $user->email = $request->get('email');
             if ($request->get('password')) {
-                $user->password = bcrypt($request->get('password'));
+                $user->password = Hash::make($request->get('password'));
             }
             $user->save();
 

@@ -28,11 +28,11 @@
 <div id="canvas">
     <div id="box_wrapper">
 
-        <section id="top" class="page_toplogo ls table_section table_section_md columns_margin_0 section_padding_lg_25">
-        </section>
+        {{--<section id="top" class="page_toplogo ls table_section table_section_md columns_margin_0 section_padding_lg_25">--}}
+        {{--</section>--}}
 
-        <header id="menu" class="page_header header_white ls ms">
-        </header>
+        {{--<header id="menu" class="page_header header_white ls ms">--}}
+        {{--</header>--}}
 
         @yield('content')
 

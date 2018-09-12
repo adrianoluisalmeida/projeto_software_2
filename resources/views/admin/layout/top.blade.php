@@ -2,8 +2,8 @@
     <div class="header-inner">
         <div class="page-logo">
             <a href="{{ url("/admin") }}">
-                {{--<h3 style="margin-top: 10px; color: #fff">{{ config('app.name') }}</h3>--}}
-                <img src="/images/admin/logo.png" class="img-responsive col-md-12" style="margin-top: 6px; width: 140px" alt="logo"/>
+                <h3 style="margin-top: 10px; color: #fff">{{ config('app.name') }}</h3>
+                {{--<img src="/images/admin/logo.png" class="img-responsive col-md-12" style="margin-top: 6px; width: 140px" alt="logo"/>--}}
             </a>
         </div>
         <a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

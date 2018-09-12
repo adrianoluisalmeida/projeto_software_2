@@ -1,4 +1,4 @@
-<div class="col-md-5 col-md-offset-2">
+<div class="col-md-5 col-md-offset-3">
     <h3>@lang('titles.entities')</h3>
     <div class="form-group">
         {!! Form::label('name', 'Nome', ['class' => 'control-label']) !!}
@@ -11,7 +11,6 @@
         {!! Form::text('phone', null, ['class' => 'form-control']) !!}
         <span class="text-danger">{{ $errors->first('phone') }}</span>
     </div>
-
     <h2>Endereço</h2>
     <div class="form-group">
         {!! Form::select('city_id', $cities, null, ['class' => 'form-control']) !!}
@@ -31,9 +30,6 @@
         {!! Form::text('complement', null, ['class' => 'form-control']) !!}
         <span class="text-danger">{{ $errors->first('complement') }}</span>
     </div>
-
-
-
     <div class="form-group">
         {!! Form::label('email', 'E-mail', ['class' => 'control-label']) !!}
         {!! Form::text('email', null, ['class' => 'form-control']) !!}
@@ -41,14 +37,6 @@
 
     </div>
 
+    {!! Form::submit(__('titles.save'), ['class' => 'btn ink-reaction btn-raised btn-primary pull-right']) !!}
 
-</div>
-
-
-<div class="col-md-12">
-    <div class="form-group m-b-0">
-        <div class="col-md-7">
-            {!! Form::submit(__('titles.save'), ['class' => 'btn ink-reaction btn-raised btn-primary pull-right']) !!}
-        </div>
-    </div>
 </div>

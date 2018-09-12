@@ -71,7 +71,8 @@ Route::group(['middleware' => ['auth', 'authorize'], 'prefix' => 'admin'], funct
         Route::get('/', ['uses' => 'Admin\EntitiesController@index', 'as' => 'entities.index']);
         Route::get('/create', ['uses' => 'Admin\EntitiesController@create', 'as' => 'entities.create']);
         Route::get('{id}/edit', ['uses' => 'Admin\EntitiesController@edit', 'as' => 'entities.edit']);
-        Route::get('{id}', ['uses' => 'Admin\EntitiesController@destroy', 'as' => 'entities.remove']);
+//        Route::get('{id}', ['uses' => 'Admin\EntitiesController@destroy', 'as' => 'entities.remove']);
+        Route::get('{id}/remove', ['uses' => 'Admin\EntitiesController@destroy', 'as' => 'entities.remove']);
 
         Route::post('/', 'Admin\EntitiesController@store');
         Route::put('/{id}', 'Admin\EntitiesController@update');
