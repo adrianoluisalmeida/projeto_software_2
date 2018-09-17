@@ -4,7 +4,18 @@
         {!! Form::label('name', 'Nome', ['class' => 'control-label']) !!}
         {!! Form::text('name', null, ['class' => 'form-control']) !!}
         <span class="text-danger">{{ $errors->first('name') }}</span>
+    </div>
 
+    <div class="form-group">
+        {!! Form::label('description', 'Descrição', ['class' => 'control-label']) !!}
+        {!! Form::text('description', null, ['class' => 'form-control']) !!}
+        <span class="text-danger">{{ $errors->first('description') }}</span>
+    </div>
+
+    <div class="form-group">
+        {!! Form::label('icon', 'Icone', ['class' => 'control-label']) !!}
+        {!! Form::text('icon', null, ['class' => 'form-control']) !!}
+        <span class="text-danger">{{ $errors->first('icon') }}</span>
     </div>
 
     <div class="form-group">

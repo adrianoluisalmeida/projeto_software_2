@@ -37,10 +37,6 @@ class CreateEntitiesTable extends Migration
     public function down()
     {
 
-        Schema::table('entities', function (Blueprint $table) {
-            $table->dropForeign('entities_city_id_foreign');
-            $table->dropForeign('entities_city_id_foreign');
-        });
 
         Schema::dropIfExists('entities');
     }

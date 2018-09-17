@@ -11,7 +11,7 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Category::create(['name' => 'Iluminação', 'status' => true]);
+        \App\Models\Category::create(['name' => 'Iluminação', 'icon' => 'bulb', 'status' => true]);
         \App\Models\Category::create(['name' => 'Saúde', 'status' => true]);
         \App\Models\Category::create(['name' => 'Vias Urbanas', 'status' => true]);
         \App\Models\Category::create(['name' => 'Vias Rurais', 'status' => true]);
