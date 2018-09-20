@@ -39,14 +39,15 @@ class ReportsService
             return response()->json($validator->errors(), Response::HTTP_BAD_REQUEST);
         } else {
 
-            if ($request->file('photo')) {
-                $post = $request->all();
-                $file = $request->file('photo');
+            $post = $request->all();
+            $post['photo'] = '';
 
+            if ($request->file('photo')) {
+                $file = $request->file('photo');
                 //Save image
                 $post['photo'] = UploadService::send($file);
-                $report = Report::create($post);
             }
+            $report = Report::create($post);
 
             return response()->json($report, Response::HTTP_CREATED);
         }
