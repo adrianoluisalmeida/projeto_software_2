@@ -10,4 +10,6 @@ class Category extends Model
     protected $fillable = ['name', 'description', 'icon', 'status'];
 
     public $timestamps = false;
+
+
 }

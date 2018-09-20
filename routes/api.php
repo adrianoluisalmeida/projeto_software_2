@@ -24,6 +24,13 @@ Route::group(['middleware' => ['auth:api'], 'prefix' => 'users'], function () {
     Route::put('/', 'Api\UserController@update');
 });
 
+Route::group(['middleware' => ['auth:api'], 'prefix' => 'reports'], function () {
+    Route::get('/', 'Api\ReportsController@index');
+    Route::post('/', 'Api\ReportsController@store');
+    Route::put('/{id}', 'Api\ReportsController@update');
+});
+
+
 Route::group(['middleware' => ['auth:api']], function () {
     Route::group(['prefix' => 'entities'], function () {
         Route::get('/{city?}', 'Api\EntitiesController@index');

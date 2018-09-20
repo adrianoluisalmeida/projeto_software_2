@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('a-triunfo', 'HomeController@about');
 
 Auth::routes();
 
@@ -83,11 +82,21 @@ Route::group(['middleware' => ['auth', 'authorize'], 'prefix' => 'admin'], funct
         Route::get('/', ['uses' => 'Admin\CategoriesController@index', 'as' => 'categories.index']);
         Route::get('/create', ['uses' => 'Admin\CategoriesController@create', 'as' => 'categories.create']);
         Route::get('{id}/edit', ['uses' => 'Admin\CategoriesController@edit', 'as' => 'categories.edit']);
-//        Route::get('{id}', ['uses' => 'Admin\EntitiesController@destroy', 'as' => 'entities.remove']);
         Route::get('{id}/remove', ['uses' => 'Admin\CategoriesController@destroy', 'as' => 'categories.remove']);
 
         Route::post('/', 'Admin\CategoriesController@store');
         Route::put('/{id}', 'Admin\CategoriesController@update');
+    });
+
+    Route::group(['prefix' => 'reports'], function() {
+
+        Route::get('/', ['uses' => 'Admin\ReportsController@index', 'as' => 'reports.index']);
+        Route::get('/create', ['uses' => 'Admin\ReportsController@create', 'as' => 'reports.create']);
+        Route::get('{id}/edit', ['uses' => 'Admin\ReportsController@edit', 'as' => 'reports.edit']);
+        Route::get('{id}/remove', ['uses' => 'Admin\ReportsController@destroy', 'as' => 'reports.remove']);
+
+        Route::post('/', 'Admin\ReportsController@store');
+        Route::put('/{id}', 'Admin\ReportsController@update');
     });
 
 
