@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Entity;
 use App\Models\RoleModel;
 use App\Services\UserService;
 use Illuminate\Http\Request;
@@ -41,7 +42,8 @@ class UsersController extends Controller
     public function create()
     {
         $roles = $this->role->all();
-        return view('admin/users/create', compact('roles'));
+        $entities = Entity::all();
+        return view('admin/users/create', compact('roles', 'entities'));
     }
 
     /**
@@ -85,8 +87,10 @@ class UsersController extends Controller
         $row = User::find($id);
         $roles = $this->role->all();
         $userRoles = $row->roles()->pluck('id')->toArray();
+        $entities = Entity::all();
+        $userEntities = $row->entities()->pluck('id')->toArray();
 
-        return view('admin/users/edit', compact('roles', 'row', 'userRoles'));
+        return view('admin/users/edit', compact('roles', 'row', 'userRoles', 'entities', 'userEntities'));
     }
 
     /**

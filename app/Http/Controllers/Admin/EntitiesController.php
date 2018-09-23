@@ -7,6 +7,7 @@ use App\Models\Entity;
 use App\Services\EntitiesService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class EntitiesController extends Controller
 {
@@ -27,6 +28,8 @@ class EntitiesController extends Controller
      */
     public function index()
     {
+
+
         $entities = $this->service->all();
 
         return view('admin/entities/index', compact('entities'));

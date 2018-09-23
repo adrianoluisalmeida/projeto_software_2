@@ -51,6 +51,30 @@
     </div>
 </div>
 
+<div class="col-md-5">
+    <h3>Entidades</h3>
+    <div class="form-group">
+
+        <div class="col-md-10 no-padding">
+
+            @foreach($entities as $entity)
+
+
+                @if(isset($userEntities))
+                    <?php $checked = in_array($entity->id, $userEntities); ?>
+                @else
+                    <?php $checked = ""; ?>
+                @endif
+                <div class="checkbox">
+                    <label>
+                        {!! Form::checkbox('entity[]', $entity->id, $checked) !!} {{ $entity->name }}
+                    </label>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</div>
+
 
 <div class="col-md-12">
     <div class="form-group m-b-0">

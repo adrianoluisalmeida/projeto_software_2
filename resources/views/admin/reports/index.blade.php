@@ -14,7 +14,11 @@
 @endsection
 
 @section('content')
+
+    @foreach($entities as $entity)
+
     <div class="col-md-12">
+        <h2><small>Entidade </small>{{ $entity->name }}</h2>
 {{--        @include("admin.layout.bottons", ["buttons" => ["create"]])--}}
         <table class="table table-striped">
             <thead>
@@ -25,7 +29,7 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($reports as $report)
+            @foreach($entity->reports as $report)
                 <tr>
                     <td>{{ $report->id }}</td>
                     <td>{{ $report->address }}</td>
@@ -40,4 +44,5 @@
             </tbody>
         </table>
     </div>
+    @endforeach
 @endsection

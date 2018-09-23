@@ -38,6 +38,7 @@ class UserService
         $validator = $this->validationUser($request);
 
         $roles = $request->get('role');
+        $entities = $request->get('entity');
 
         if ($validator->fails()) {
             return response()->json($validator->errors(), Response::HTTP_BAD_REQUEST);
@@ -54,6 +55,8 @@ class UserService
             else
                 $user->syncRoles([2]); //user group
 
+            $user->entities()->sync($entities);
+
             return response()->json($user, Response::HTTP_CREATED);
         }
     }
@@ -63,13 +66,13 @@ class UserService
         $user = Auth::user();
         $validator = $this->validationUser($request, $user->id);
         $roles = $request->get('role');
+        $entities = $request->get('entity');
 
         if ($validator->fails()) {
             return response()->json($validator->errors(), Response::HTTP_BAD_REQUEST);
         } else {
             $user = User::find($id);
             $user->name = $request->get('name');
-//            $user->email = $request->get('email');
             if ($request->get('password')) {
                 $user->password = Hash::make($request->get('password'));
             }
@@ -77,6 +80,8 @@ class UserService
 
             if(!is_null($roles))
                 $user->syncRoles($roles);
+
+            $user->entities()->sync($entities);
 
 //            else
 //                $user->syncRoles([2]); //user group
@@ -96,7 +101,6 @@ class UserService
     private function validationUser($request, $id = null){
 
         $validationEmail = is_null($id) ? 'required|unique:users,email' :  '';
-//        dd($validationEmail);
 
         return Validator::make($request->all(), [
             'name' => 'required|max:255',

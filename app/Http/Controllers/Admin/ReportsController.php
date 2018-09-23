@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Services\ReportsService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ReportsController extends Controller
 {
@@ -26,9 +27,11 @@ class ReportsController extends Controller
      */
     public function index()
     {
-        $reports = $this->service->all();
 
-        return view('admin/reports/index', compact('reports'));
+        $user = Auth::user();
+        $entities = $user->entities;
+
+        return view('admin/reports/index', compact('entities'));
     }
 
     /**
