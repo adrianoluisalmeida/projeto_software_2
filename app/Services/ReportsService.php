@@ -40,7 +40,16 @@ class ReportsService
     }
 
     public function getEntityReports($id){
-        return $this->entity->find($id)->reports;
+
+        $entity = $this->entity->find($id);
+
+        if($entity){
+            return $entity->reports;
+        }else{
+            return [];
+        }
+
+
     }
 
     /**
