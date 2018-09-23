@@ -15,15 +15,21 @@ class ReportsController extends Controller
         $this->service = $userService;
     }
 
-
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @param null $id
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function index()
+    public function index($id = null)
     {
-        return response()->json($this->service->all());
+        if($id){
+            return response()->json($this->service->get($id));
+        }else{
+            return response()->json($this->service->all());
+        }
+    }
+
+    public function indexEntity($entityId){
+        return response()->json($this->service->getEntityReports($entityId));
     }
 
     /**

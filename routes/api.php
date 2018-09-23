@@ -26,6 +26,9 @@ Route::group(['middleware' => ['auth:api'], 'prefix' => 'users'], function () {
 
 Route::group(['middleware' => ['auth:api'], 'prefix' => 'reports'], function () {
     Route::get('/', 'Api\ReportsController@index');
+    Route::get('/{id}', 'Api\ReportsController@index');
+    Route::get('/entity/{id}', 'Api\ReportsController@indexEntity');
+
     Route::post('/', 'Api\ReportsController@store');
     Route::put('/{id}', 'Api\ReportsController@update');
 });

@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Entity;
 use App\Models\Report;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Validator;
@@ -11,11 +12,13 @@ class ReportsService
 {
 
     private $report;
+    private $entity;
 
-    public function __construct(Report $report)
+    public function __construct(Report $report, Entity $entity)
     {
 
         $this->report = $report;
+        $this->entity = $entity;
     }
 
 
@@ -25,6 +28,19 @@ class ReportsService
     public function all()
     {
         return $this->report->all();
+    }
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+
+    public function get($id){
+        return $this->report->find($id);
+    }
+
+    public function getEntityReports($id){
+        return $this->entity->find($id)->reports;
     }
 
     /**

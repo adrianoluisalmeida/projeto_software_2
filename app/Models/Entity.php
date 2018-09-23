@@ -16,4 +16,8 @@ class Entity extends Model
     public function city(){
         return $this->hasOne(City::class, 'id', 'city_id');
     }
+
+    public function reports(){
+        return $this->hasMany(Report::class, 'entity_id', 'id');
+    }
 }
