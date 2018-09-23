@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Category;
 use App\Models\Entity;
 use App\Models\Report;
+use App\Models\User;
 use App\Services\ReportsService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -68,7 +69,10 @@ class ReportsController extends Controller
      */
     public function show($id)
     {
-        //
+        $report = $this->service->get($id);
+        $user = User::find($report->user_id);
+
+        return view('admin/reports/view', compact('report', 'user'));
     }
 
     /**

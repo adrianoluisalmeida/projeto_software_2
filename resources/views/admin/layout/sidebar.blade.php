@@ -22,6 +22,10 @@ $menus = [
     "Categorias" => [
         "url" => "/admin/categories",
         "icon" => "icon-home"
+    ],
+    "Solicitações (Reports)" => [
+        "url" => "/admin/reports",
+        "icon" => "icon-home"
     ]
 
 ];

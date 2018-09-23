@@ -94,6 +94,7 @@ Route::group(['middleware' => ['auth', 'authorize'], 'prefix' => 'admin'], funct
         Route::get('/create', ['uses' => 'Admin\ReportsController@create', 'as' => 'reports.create']);
         Route::get('{id}/edit', ['uses' => 'Admin\ReportsController@edit', 'as' => 'reports.edit']);
         Route::get('{id}/remove', ['uses' => 'Admin\ReportsController@destroy', 'as' => 'reports.remove']);
+        Route::get('{id}/view', ['uses' => 'Admin\ReportsController@show', 'as' => 'reports.view']);
 
         Route::post('/', 'Admin\ReportsController@store');
         Route::put('/{id}', 'Admin\ReportsController@update');
