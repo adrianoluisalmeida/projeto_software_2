@@ -31,6 +31,16 @@ Route::group(['middleware' => ['auth:api'], 'prefix' => 'reports'], function () 
 
     Route::post('/', 'Api\ReportsController@store');
     Route::put('/{id}', 'Api\ReportsController@update');
+
+
+    Route::post('/react', 'Api\ReportsController@postReact');
+    Route::get('/react/{report_id}/total', 'Api\ReportsController@getReactTotal');
+    Route::get('/react/{report_id}', 'Api\ReportsController@getReact');
+
+
+    Route::put('/react/{react_id}', 'Api\ReportsController@updateReact');
+    Route::delete('/react/{react_id}', 'Api\ReportsController@destroyReact');
+
 });
 
 
