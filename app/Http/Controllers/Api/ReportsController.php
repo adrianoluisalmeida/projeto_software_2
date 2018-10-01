@@ -40,7 +40,10 @@ class ReportsController extends Controller
     }
 
     public function indexEntity($entityId){
-        return response()->json($this->service->getEntityReports($entityId));
+        $reports = $this->service->getEntityReports($entityId);
+        $reports->load('positives');
+        $reports->load('negatives');
+        return response()->json($reports);
     }
 
     /**
