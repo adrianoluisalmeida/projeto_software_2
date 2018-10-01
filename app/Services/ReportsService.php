@@ -37,6 +37,8 @@ class ReportsService
      */
 
     public function get($id){
+
+
         return $this->report->find($id);
     }
 

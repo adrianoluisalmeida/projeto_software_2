@@ -10,4 +10,6 @@ class ReportReaction extends Model
     protected $fillable = ['reaction', 'comment', 'user_id', 'report_id'];
 
     public $timestamps = false;
+
+
 }

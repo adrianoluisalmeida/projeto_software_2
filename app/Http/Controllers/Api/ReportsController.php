@@ -24,9 +24,18 @@ class ReportsController extends Controller
     public function index($id = null)
     {
         if($id){
-            return response()->json($this->service->get($id));
+            $result = $this->service->get($id);
+            $result->load('positives');
+            $result->load('negatives');
+
+            return response()->json($result);
         }else{
-            return response()->json($this->service->all());
+
+            $results = $this->service->all();
+            $results->load('positives');
+            $results->load('negatives');
+
+            return response()->json($results);
         }
     }
 
