@@ -20,27 +20,41 @@
         <div class="page-content-wrapper">
 
             <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-            <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                  aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
+                        {!! Form::open(['url' => 'admin/reports/status-update', 'class' => 'horizontal-form', 'files' => true, 'method' => 'POST']) !!}
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                            <h4 class="modal-title">Modal title</h4>
+                            <h4 class="modal-title">Atualização de situação</h4>
                         </div>
                         <div class="modal-body">
-                            Widget settings form goes here
+                            <div class="form-group">
+                                {!! Form::label('description', 'Descrição', ['class' => 'control-label']) !!}
+                                {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
+                                <span class="text-danger">{{ $errors->first('description') }}</span>
+                            </div>
+                            {!! Form::hidden('report_id', $report->id) !!}
+
+                            <div class="form-group">
+                                {!! Form::label('status', 'Situação * ', ['class' => 'control-label']) !!}
+                                {!! Form::select('status', [1 => 'Em Aberto', 2 => 'Em andamento', 3 => 'Concluído'], null, ['class' => 'form-control']) !!}
+                            </div>
+                            <div class="clearfix"></div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-success">Save changes</button>
+                            <button type="submit" class="btn btn-success">Salvar</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
+                        {!! Form::open(['url' => 'admin/reports', 'class' => 'horizontal-form', 'files' => true, 'method' => 'POST']) !!}
                     </div>
                     <!-- /.modal-content -->
                 </div>
                 <!-- /.modal-dialog -->
             </div>
-            <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+
 
             <!-- BEGIN PAGE HEADER-->
 
@@ -53,7 +67,8 @@
                     <div class="col-xs-4">
                         <div class="row invoice-logo">
                             <div class="col-xs-12 invoice-logo-space">
-                                <img src="{{ asset('/storage/reports/thumb_570_515' . $report->photo) }}" alt="" class="img-responsive"/>
+                                <img src="{{ asset('/storage/reports/thumb_570_515' . $report->photo) }}" alt=""
+                                     class="img-responsive"/>
                             </div>
 
                         </div>
@@ -73,6 +88,7 @@
                                         <b>E-mail</b><br>
                                         {{ $user->email }}
                                     </li>
+
 
                                 </ul>
                             </div>
@@ -97,10 +113,29 @@
                                 </address>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>Reações:</h4>
+                                <div class="col-md-3 no-padding">
+                                    Positivas:
+                                    {{count($report->positives)}}<br/>
+                                </div>
+                                <div class="col-md-3 no-padding">
+                                    Negativas:
+                                    {{count($report->negatives)}}<br/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-
                 </div>
+
+                <br>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    Atualizar situação
+                </button>
+                <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 
                 <div class="row">
                     <div class="col-xs-12">
@@ -109,27 +144,68 @@
                             <thead>
                             <tr>
                                 <th>
-                                    #
+                                    Status
                                 </th>
 
                                 <th class="hidden-480">
-                                    Description
+                                    Descrição
+                                </th>
+
+                                <th>
+                                    Data
                                 </th>
 
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($reportStatus as $status)
                             <tr>
                                 <td>
-                                    1
+                                    {{ $status->status }}
                                 </td>
 
                                 <td class="hidden-480">
-                                    ...
+                                    {{ $status->description }}
+                                </td>
+
+                                <td>
+                                    {{ $status->created_at }}
                                 </td>
 
                             </tr>
+                                @endforeach
 
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>Reações</h2>
+                        <table class="table table-striped table-hover">
+                            <thead>
+                            <tr>
+
+
+                                <th class="hidden-480">
+                                    Usuário
+                                </th>
+                                <th class="hidden-480">
+                                    Comentário
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($report->reactions as $reaction)
+                                <tr>
+                                    <td>
+                                        {{ $reaction->user->name }}
+                                    </td>
+                                    <td class="hidden-480">
+                                        {{ $reaction->comment }}
+                                    </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

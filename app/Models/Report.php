@@ -22,4 +22,10 @@ class Report extends Model
         return $this->hasMany(ReportReaction::class)->where('reaction', false);
     }
 
+    public function reactions(){
+        return $this->hasMany(ReportReaction::class);
+    }
+
+
+
 }

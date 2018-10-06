@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\ReportReaction;
 use App\Services\ReportsService;
+use App\Services\ReportsStatusService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,10 +12,12 @@ use Symfony\Component\HttpFoundation\Response;
 class ReportsController extends Controller
 {
     private $service;
+    private $reportsStatusService;
 
-    public function __construct(ReportsService $userService)
+    public function __construct(ReportsService $userService, ReportsStatusService $reportsStatusService)
     {
         $this->service = $userService;
+        $this->reportsStatusService = $reportsStatusService;
     }
 
     /**
@@ -128,6 +131,10 @@ class ReportsController extends Controller
         }
 
         return response()->json(null, Response::HTTP_OK);
+    }
+
+    public function status($report_id){
+        return response()->json($this->reportsStatusService->get($report_id));
     }
 
 }

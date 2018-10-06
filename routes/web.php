@@ -98,6 +98,8 @@ Route::group(['middleware' => ['auth', 'authorize'], 'prefix' => 'admin'], funct
 
         Route::post('/', 'Admin\ReportsController@store');
         Route::put('/{id}', 'Admin\ReportsController@update');
+
+        Route::post('/status-update', 'Admin\ReportsController@updateStatus');
     });
 
 

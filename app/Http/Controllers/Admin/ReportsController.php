@@ -7,6 +7,7 @@ use App\Models\Entity;
 use App\Models\Report;
 use App\Models\User;
 use App\Services\ReportsService;
+use App\Services\ReportsStatusService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -14,10 +15,12 @@ use Illuminate\Support\Facades\Auth;
 class ReportsController extends Controller
 {
     private $service;
+    private $serviceUpdate;
 
-    public function __construct(ReportsService $reportsService)
+    public function __construct(ReportsService $reportsService, ReportsStatusService $reportsStatusService)
     {
         $this->service = $reportsService;
+        $this->serviceUpdate = $reportsStatusService;
     }
 
     /**
@@ -74,8 +77,9 @@ class ReportsController extends Controller
     {
         $report = $this->service->get($id);
         $user = User::find($report->user_id);
+        $reportStatus = $this->serviceUpdate->get($id);
 
-        return view('admin/reports/view', compact('report', 'user'));
+        return view('admin/reports/view', compact('report', 'user', 'reportStatus'));
     }
 
     /**
@@ -106,6 +110,20 @@ class ReportsController extends Controller
 
         if($result->getStatusCode() == 200)
             return redirect()->route('reports.index')->with('message-success', __('messages.success.update'));
+        else
+            return redirect()->back()->with('message-error', __('messages.error.update'))->withInput();
+    }
+
+    public function updateStatus(Request $request){
+        $user = Auth::user();
+
+        $post = $request->all();
+        $post['user_id'] = $user->id;
+
+        $result = $this->serviceUpdate->store($post);
+
+        if($result->getStatusCode() == 201)
+            return redirect()->back()->with('message-success', __('messages.success.update'));
         else
             return redirect()->back()->with('message-error', __('messages.error.update'))->withInput();
     }
