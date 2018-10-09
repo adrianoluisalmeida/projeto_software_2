@@ -36454,8 +36454,8 @@ var Menu = function (_Component) {
                                     null,
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'a',
-                                        { href: '/a-triunfo' },
-                                        'A Triunfo'
+                                        { href: '/sobre-nos' },
+                                        'Sobre n\xF3s'
                                     )
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -36463,35 +36463,8 @@ var Menu = function (_Component) {
                                     null,
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'a',
-                                        { href: '/servicos-florestais' },
-                                        'Servi\xE7os Florestais'
-                                    )
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'li',
-                                    null,
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'a',
-                                        { href: '/imoveis-rurais' },
-                                        'Im\xF3veis Rurais'
-                                    )
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'li',
-                                    null,
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'a',
-                                        { href: '/orcamento' },
-                                        'Or\xE7amento'
-                                    )
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'li',
-                                    null,
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'a',
-                                        { href: '/fale-conosco' },
-                                        'Fale Conosco'
+                                        { href: '/testes' },
+                                        'Testes'
                                     )
                                 )
                             )
@@ -55995,33 +55968,7 @@ var Home = function (_Component) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Banner, null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'container' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'row justify-content-center' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'div',
-                            { className: 'col-md-8' },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'div',
-                                { className: 'card' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'div',
-                                    { className: 'card-header' },
-                                    'Example Component'
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'div',
-                                    { className: 'card-body' },
-                                    'teste2'
-                                )
-                            )
-                        )
-                    )
-                )
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Banner, null)
             );
         }
     }]);
@@ -56055,10 +56002,11 @@ var Banner = function (_React$Component) {
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'li',
                             null,
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { 'class': 'over-shadow' }),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'slide-image-wrap' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'https://via.placeholder.com/1905x905', alt: '' })
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/img/home/2.jpg', alt: '' })
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'slide-image-wrap hidden-xs hidden-sm to_animate', 'data-animation': 'fadeInRight' }),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -56082,17 +56030,13 @@ var Banner = function (_React$Component) {
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                         'h2',
                                                         null,
+                                                        'Com a nossa ',
                                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                            'span',
-                                                            { className: 'thin' },
-                                                            'We Bring'
+                                                            'b',
+                                                            null,
+                                                            'cidade unida'
                                                         ),
-                                                        'Your Appliance',
-                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                            'span',
-                                                            { className: 'weight-black text-uppercase' },
-                                                            'back to life'
-                                                        )
+                                                        ', somos mais fortes!'
                                                     ),
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', { className: 'theme-divider big color2' })
                                                 ),
@@ -56102,20 +56046,7 @@ var Banner = function (_React$Component) {
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                         'p',
                                                         null,
-                                                        'Our team of professionals is well versed in the repairs of all major and minor home appliances and will repair any malfunction.'
-                                                    )
-                                                ),
-                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                    'div',
-                                                    { className: 'intro-layer', 'data-animation': 'fadeInLeft' },
-                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                        'div',
-                                                        { className: 'slide_buttons' },
-                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                            'a',
-                                                            { href: 'contact.html', className: 'theme_button color2' },
-                                                            'book online'
-                                                        )
+                                                        'Contribua para a melhoria da sua cidade.'
                                                     )
                                                 )
                                             )
@@ -56127,10 +56058,11 @@ var Banner = function (_React$Component) {
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'li',
                             null,
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { 'class': 'over-shadow' }),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'slide-image-wrap' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'https://via.placeholder.com/1905x905', alt: '' })
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/img/home/1.jpg', alt: '' })
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'slide-image-wrap hidden-xs hidden-sm to_animate', 'data-animation': 'fadeInRight' }),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -56154,18 +56086,7 @@ var Banner = function (_React$Component) {
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                         'h2',
                                                         null,
-                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                            'span',
-                                                            { className: 'thin' },
-                                                            'Fast And'
-                                                        ),
-                                                        'Quality Service',
-                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                            'span',
-                                                            {
-                                                                className: 'weight-black text-uppercase' },
-                                                            'By Professionals'
-                                                        )
+                                                        'Cidade Unida'
                                                     ),
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', { className: 'theme-divider big color2' })
                                                 ),
@@ -56175,20 +56096,7 @@ var Banner = function (_React$Component) {
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                         'p',
                                                         null,
-                                                        'Our team of professionals is well versed in the repairs of all major and minor home appliances and will repair any malfunction.'
-                                                    )
-                                                ),
-                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                    'div',
-                                                    { className: 'intro-layer', 'data-animation': 'fadeInLeft' },
-                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                        'div',
-                                                        { className: 'slide_buttons' },
-                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                            'a',
-                                                            { href: 'contact.html', className: 'theme_button color2' },
-                                                            'book online'
-                                                        )
+                                                        'Exer\xE7a sua cidadania e colabore postando e apoiando ocorr\xEAncias.'
                                                     )
                                                 )
                                             )
@@ -56248,53 +56156,122 @@ var About = function (_Component) {
         key: 'render',
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'section',
-                { className: 'page_breadcrumbs ds background_cover overlay_color section_padding_top_75 section_padding_bottom_65' },
+                'div',
+                null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'container' },
+                    'section',
+                    {
+                        className: 'page_breadcrumbs ds background_cover overlay_color section_padding_top_75 section_padding_bottom_65' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
-                        { className: 'row' },
+                        { className: 'container' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
-                            { className: 'col-sm-12 text-center' },
+                            { className: 'col-sm-12 text-center display_table_md breadcrumb center-block-fixed' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'h2',
-                                null,
-                                'About Us'
+                                { className: 'small display_table_cell_md' },
+                                'Quem Somos'
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'ol',
-                                { className: 'breadcrumb greylinks' },
+                                { className: 'breadcrumb display_table_cell_md' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'li',
                                     null,
-                                    ' ',
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'a',
-                                        { href: './' },
+                                        { href: '/' },
                                         'Home'
-                                    ),
-                                    ' '
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'li',
-                                    null,
-                                    ' ',
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'a',
-                                        { href: '#' },
-                                        'Pages'
-                                    ),
-                                    ' '
+                                    )
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'li',
                                     { className: 'active' },
-                                    'About Us'
+                                    'Quem somos'
                                 )
                             )
+                        )
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'section',
+                    { className: 'ls section_padding_top_140 columns_margin_bottom_30' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'container' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'row' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'col-md-12 to_animate', 'data-animation': 'fadeInRight',
+                                    'data-delay': '600' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'h2',
+                                    { className: 'section_header' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'span',
+                                        { className: 'thin' },
+                                        'O'
+                                    ),
+                                    ' Problema'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', { className: 'theme-divider color1' }),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'p',
+                                    null,
+                                    'Buracos, vazamentos, lix\xE3o irregular, s\xE3o apenas alguns dos problemas di\xE1rios encontrados nas grandes cidades. Com o crescimento cont\xEDnuo e acelerado das cidades brasileiras, identificar todos os problemas diariamente, pode ser um grande desafio para as prefeituras e \xF3rg\xE3os p\xFAblicos. Por outro lado, quem diariamente desloca-se e se depara com problemas como: estacionamento irregular, problemas de pavimenta\xE7\xE3o, falta de \xE1gua e luz, \xE9 a popula\xE7\xE3o. A popula\xE7\xE3o acabam enfrentando dificuldades de ter voz ativa para relatar esses e outros problemas em suas cidades.'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'h2',
+                                    { className: 'section_header' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'span',
+                                        { className: 'thin' },
+                                        'Nossa'
+                                    ),
+                                    ' Solu\xE7\xE3o'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', { className: 'theme-divider color1' }),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'p',
+                                    null,
+                                    'Pensando em esclarecer e facilitar comunica\xE7\xE3o entre os \xF3rg\xE3os p\xFAblicos e a popula\xE7\xE3o, o presente trabalho apresenta uma solu\xE7\xE3o de Software para gest\xE3o de ocorr\xEAncias de ordem p\xFAblica. Como resultado, busca-se desenvolver um aplicativo que qualquer cidad\xE3o possa denunciar um problema p\xFAblico na sua cidade. Esses problemas ser\xE3o reportados e vistos pelas demais pessoas do aplicativo e al\xE9m disso a prefeitura tamb\xE9m receber\xE1 essas \u201Cden\xFAncias\u201D. Atrav\xE9s da categoria selecionada no ato do registro da den\xFAncia, ela pode ser encaminhada diretamente para o setor respons\xE1vel por esse problema. Dessa forma contribuindo para a identifica\xE7\xE3o de problemas di\xE1rios mais rapidamente e assim facilitando a aplica\xE7\xE3o de medidas de corre\xE7\xE3o ao problema.'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'h2',
+                                    { className: 'section_header' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'span',
+                                        { className: 'thin' },
+                                        'Mais'
+                                    ),
+                                    ' Informa\xE7\xF5es'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', { className: 'theme-divider color1' }),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'p',
+                                    null,
+                                    'Adriano Almeida ',
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'a',
+                                        {
+                                            href: 'mailto:alalmeida@inf.ufsm.br' },
+                                        'alalmeida@inf.ufsm.br'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                                    'Roger Couto ',
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'a',
+                                        { href: 'mailto:recouto@inf.ufsm.br' },
+                                        'recouto@inf.ufsm.br'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null)
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-md-6 col-md-pull-6 text-center text-md-left bottommargin_0 to_animate',
+                                'data-animation': 'fadeInUp', 'data-delay': '300' })
                         )
                     )
                 )

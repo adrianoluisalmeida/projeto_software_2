@@ -1,0 +1,17 @@
+.center-block-fixed{
+    margin: 0 auto;
+    float: none;
+}
+
+.over-shadow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-size: cover;
+    z-index: 2;
+    opacity: 0.4;
+    background: #000;
+    background-position: center;
+}

@@ -22,7 +22,8 @@ mix.scripts(
         'resources/assets/css/animations.css',
         'resources/assets/css/fonts.css',
         'resources/assets/css/main.css',
-        'resources/assets/css/shop.css'
+        'resources/assets/css/custom.css',
+
     ], 'public/css/theme.css')
 
     .scripts([

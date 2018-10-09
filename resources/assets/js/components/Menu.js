@@ -14,11 +14,8 @@ export default class Menu extends Component {
                                     <li className="active">
                                         <a href="/">Home</a>
                                     </li>
-                                    <li><a href="/a-triunfo">A Triunfo</a></li>
-                                    <li><a href="/servicos-florestais">Serviços Florestais</a></li>
-                                    <li><a href="/imoveis-rurais">Imóveis Rurais</a></li>
-                                    <li><a href="/orcamento">Orçamento</a></li>
-                                    <li><a href="/fale-conosco">Fale Conosco</a></li>
+                                    <li><a href="/sobre-nos">Sobre nós</a></li>
+                                    <li><a href="/testes">Testes</a></li>
                                 </ul>
                             </nav>
 
