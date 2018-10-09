@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/sobre-nos', ['uses' => 'HomeController@about', 'as' => 'about']);
+Route::get('/quem-somos', ['uses' => 'HomeController@about', 'as' => 'about']);
 Route::get('/testes', ['uses' => 'HomeController@tests', 'as' => 'teste']);
 
 Auth::routes();
