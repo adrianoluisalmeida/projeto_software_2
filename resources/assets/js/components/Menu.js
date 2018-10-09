@@ -2,6 +2,32 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
 export default class Menu extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            menu: [
+                {
+                    name: "Home",
+                    link: "/"
+                },
+                {
+                    name: "Quem Somos",
+                    link: "/quem-somos"
+                },
+                {
+                    name: "Testes",
+                    link: "/"
+                }
+            ]
+        }
+    }
+
+    testPath(item) {
+        var pathname = window.location.pathname;
+        return item == pathname ? 'active' : '';
+    }
+
     render(){
         return (
 
@@ -10,12 +36,18 @@ export default class Menu extends Component {
                         <div className="col-sm-12 text-center">
 
                             <nav className="mainmenu_wrapper">
+
                                 <ul className="mainmenu nav sf-menu">
-                                    <li className="active">
-                                        <a href="/">Home</a>
-                                    </li>
-                                    <li><a href="/sobre-nos">Sobre nós</a></li>
-                                    <li><a href="/testes">Testes</a></li>
+                                    {
+                                        this.state.menu.map((item, indice) => {
+                                            return (
+                                                <li key={indice} className={ this.testPath(item.link) }>
+                                                    <a href={item.link}>{item.name}</a>
+                                                </li>
+                                            )
+                                        })
+                                    }
+
                                 </ul>
                             </nav>
 

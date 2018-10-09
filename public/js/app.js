@@ -36416,15 +36416,37 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Menu = function (_Component) {
     _inherits(Menu, _Component);
 
-    function Menu() {
+    function Menu(props) {
         _classCallCheck(this, Menu);
 
-        return _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).call(this, props));
+
+        _this.state = {
+            menu: [{
+                name: "Home",
+                link: "/"
+            }, {
+                name: "Quem Somos",
+                link: "/quem-somos"
+            }, {
+                name: "Testes",
+                link: "/"
+            }]
+        };
+        return _this;
     }
 
     _createClass(Menu, [{
+        key: 'testPath',
+        value: function testPath(item) {
+            var pathname = window.location.pathname;
+            return item == pathname ? 'active' : '';
+        }
+    }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'container' },
@@ -36440,33 +36462,17 @@ var Menu = function (_Component) {
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'ul',
                                 { className: 'mainmenu nav sf-menu' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'li',
-                                    { className: 'active' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'a',
-                                        { href: '/' },
-                                        'Home'
-                                    )
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'li',
-                                    null,
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'a',
-                                        { href: '/sobre-nos' },
-                                        'Sobre n\xF3s'
-                                    )
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'li',
-                                    null,
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'a',
-                                        { href: '/testes' },
-                                        'Testes'
-                                    )
-                                )
+                                this.state.menu.map(function (item, indice) {
+                                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'li',
+                                        { key: indice, className: _this2.testPath(item.link) },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            { href: item.link },
+                                            item.name
+                                        )
+                                    );
+                                })
                             )
                         )
                     )
