@@ -17,3 +17,4 @@ require('./components/Menu');
 require('./components/Top');
 require('./components/Home');
 require('./components/About');
+require('./components/Test');

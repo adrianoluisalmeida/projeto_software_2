@@ -17,7 +17,7 @@ export default class Menu extends Component {
                 },
                 {
                     name: "Testes",
-                    link: "/"
+                    link: "/testes"
                 }
             ]
         }
