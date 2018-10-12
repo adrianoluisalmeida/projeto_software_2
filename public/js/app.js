@@ -14135,7 +14135,7 @@ module.exports = checkPropTypes;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(19);
-module.exports = __webpack_require__(61);
+module.exports = __webpack_require__(62);
 
 
 /***/ }),
@@ -14161,7 +14161,7 @@ __webpack_require__(44);
 __webpack_require__(58);
 __webpack_require__(59);
 __webpack_require__(60);
-__webpack_require__(66);
+__webpack_require__(61);
 
 /***/ }),
 /* 20 */
@@ -56298,16 +56298,6 @@ if (document.getElementById('about')) {
 
 /***/ }),
 /* 61 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -56401,7 +56391,12 @@ var Test = function (_Component) {
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'p',
                                     null,
-                                    'Como se trata de um primeiro teste, a APK est\xE1 dispon\xEDvel em:'
+                                    'Como se trata de um primeiro teste, a APK est\xE1 dispon\xEDvel em: ',
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'a',
+                                        { href: 'https://www.dropbox.com/s/ev3fum0eiogm57c/android-debug.apk?dl=0', target: '_blank' },
+                                        'https://www.dropbox.com/s/ev3fum0eiogm57c/android-debug.apk?dl=0'
+                                    )
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'h2',
@@ -56440,14 +56435,14 @@ var Test = function (_Component) {
                                         null,
                                         'usuario'
                                     ),
-                                    ': ',
+                                    ': teste@gmail.com',
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'b',
                                         null,
                                         'senha'
                                     ),
-                                    ':',
+                                    ': teste123',
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null)
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -56569,6 +56564,26 @@ var Test = function (_Component) {
                                         'recouto@inf.ufsm.br'
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null)
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'h2',
+                                    { className: 'section_header' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'thin' }),
+                                    'Formul\xE1rio de resultados obtidos'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', { className: 'theme-divider color1' }),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'p',
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'a',
+                                        {
+                                            target: '_blank',
+                                            href: 'https://docs.google.com/forms/d/1MIP-4qt3vqkKU_uQkuGHGr-c9W7bFnmygRytmSHkAZw' },
+                                        'Clique aqui para preencher o formul\xE1rio de resultados'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null)
                                 )
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-md-6 col-md-pull-6 text-center text-md-left bottommargin_0 to_animate',
@@ -56589,6 +56604,12 @@ var Test = function (_Component) {
 if (document.getElementById('test')) {
     __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Test, null), document.getElementById('test'));
 }
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

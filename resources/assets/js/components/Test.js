@@ -31,7 +31,7 @@ export default class Test extends Component {
                                 </h2>
                                 <hr className="theme-divider color1"/>
                                 <p>
-                                    Como se trata de um primeiro teste, a APK está disponível em:
+                                    Como se trata de um primeiro teste, a APK está disponível em: <a href="https://www.dropbox.com/s/ev3fum0eiogm57c/android-debug.apk?dl=0" target="_blank">https://www.dropbox.com/s/ev3fum0eiogm57c/android-debug.apk?dl=0</a>
 
                                 </p>
                                 <h2 className="section_header">
@@ -46,8 +46,8 @@ export default class Test extends Component {
                                     <b>endereço</b>: <a href="http://cidadeunida.pipelinelab.com.br/admin"
                                                         target="_blank">http://cidadeunida.pipelinelab.com.br/admin</a>
                                     <br/>
-                                    <b>usuario</b>: <br/>
-                                    <b>senha</b>:<br/>
+                                    <b>usuario</b>: teste@gmail.com<br/>
+                                    <b>senha</b>: teste123<br/>
                                 </p>
 
                                 <h3 className="section_header">
@@ -101,6 +101,19 @@ export default class Test extends Component {
                                     Adriano Almeida <a
                                     href="mailto:alalmeida@inf.ufsm.br">alalmeida@inf.ufsm.br</a><br/>
                                     Roger Couto <a href="mailto:recouto@inf.ufsm.br">recouto@inf.ufsm.br</a><br/>
+
+
+                                </p>
+
+                                <h2 className="section_header">
+                                    <span className="thin"></span>Formulário de resultados obtidos
+                                </h2>
+                                <hr className="theme-divider color1"/>
+                                <p>
+                                    <a
+                                        target="_blank"
+                                    href="https://docs.google.com/forms/d/1MIP-4qt3vqkKU_uQkuGHGr-c9W7bFnmygRytmSHkAZw">Clique aqui para preencher o formulário de resultados</a><br/>
+                                    <br/>
 
 
                                 </p>
