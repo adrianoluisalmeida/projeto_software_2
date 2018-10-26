@@ -37,6 +37,9 @@ class NotificationsController extends Controller
     {
         $user = Auth::user();
 
+        dd($user);
+
+
         $result = $this->service->all_user($user->id);
 
 
