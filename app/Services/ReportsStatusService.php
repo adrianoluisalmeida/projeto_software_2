@@ -8,6 +8,7 @@ use App\Models\ReportUpdate;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use App\Notifications\MyNotification;
 
 class ReportsStatusService
 {
@@ -57,6 +58,10 @@ class ReportsStatusService
             $report = $this->report->find($report_id);
             $report->status = $post['status'];
             $report->update();
+
+
+        $report->notify(new MyNotification());
+        dd('ts');
 
             return response()->json($status, Response::HTTP_CREATED);
         }
