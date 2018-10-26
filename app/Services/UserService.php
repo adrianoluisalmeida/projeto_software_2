@@ -46,6 +46,7 @@ class UserService
 
             $user = User::create([
                 'name' => $request->get('name'),
+                'token_firebase' => $request->get('token_firebase'),
                 'email' => $request->get('email'),
                 'password' => Hash::make($request->get('password'))
             ]);
@@ -73,6 +74,7 @@ class UserService
         } else {
             $user = User::find($id);
             $user->name = $request->get('name');
+            $user->token_firebase = $request->get('token_firebase');
             if ($request->get('password')) {
                 $user->password = Hash::make($request->get('password'));
             }
