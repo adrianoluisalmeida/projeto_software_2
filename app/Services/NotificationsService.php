@@ -3,7 +3,6 @@
 namespace App\Services;
 
 use App\Models\Notification;
-use App\Models\Report;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -49,7 +48,7 @@ class NotificationsService
             return response()->json($validator->errors(), Response::HTTP_BAD_REQUEST);
         } else {
 
-            $notification = Report::create($request->all());
+            $notification = Notification::create($request->all());
 
             return response()->json($notification, Response::HTTP_CREATED);
         }
@@ -64,7 +63,7 @@ class NotificationsService
         } else {
 
             $post = $request->all();
-            $reportUpdate = Report::find($id);
+            $reportUpdate = Notification::find($id);
             $reportUpdate->update($post);
 
             return response()->json(true, Response::HTTP_OK);
