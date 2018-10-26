@@ -24,6 +24,15 @@ Route::group(['middleware' => ['auth:api'], 'prefix' => 'users'], function () {
     Route::put('/', 'Api\UserController@update');
 });
 
+Route::group(['middleware' => ['auth:api'], 'prefix' => 'notifications'], function () {
+    Route::get('/{id}', 'Api\ReportsController@index');
+    Route::get('/user', 'Api\ReportsController@getUser');
+
+    Route::post('/', 'Api\NotificationsController@store');
+    Route::put('/{id}', 'Api\NotificationsController@update');
+
+});
+
 Route::group(['middleware' => ['auth:api'], 'prefix' => 'reports'], function () {
     Route::get('/', 'Api\ReportsController@index');
     Route::get('/{id}', 'Api\ReportsController@index');
