@@ -25,7 +25,7 @@ class NotificationsController extends Controller
     public function get($id)
     {
         $result = $this->service->get($id);
-        $result->load('user');
+
 
         return response()->json($result);
     }
@@ -37,7 +37,7 @@ class NotificationsController extends Controller
     {
         $user = Auth::user();
         $result = $this->service->all_user($user->id);
-        $result->load('user');
+
 
         return response()->json($result);
     }
