@@ -24,10 +24,10 @@ class NotificationsController extends Controller
      */
     public function get($id)
     {
-            $result = $this->service->get($id);
-            $result->load('user');
+        $result = $this->service->get($id);
+        $result->load('user');
 
-            return response()->json($result);
+        return response()->json($result);
     }
 
     /**
@@ -45,7 +45,7 @@ class NotificationsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -64,8 +64,6 @@ class NotificationsController extends Controller
         $response = $this->service->update($request, $id);
         return $response;
     }
-
-
 
 
 }
