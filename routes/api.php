@@ -26,7 +26,7 @@ Route::group(['middleware' => ['auth:api'], 'prefix' => 'users'], function () {
 
 Route::group(['middleware' => ['auth:api'], 'prefix' => 'notifications'], function () {
     Route::get('/{id}', 'Api\NotificationsController@get');
-    Route::get('/user', 'Api\NotificationsController@getUser');
+    Route::get('/user/all', 'Api\NotificationsController@get_user');
 
     Route::post('/', 'Api\NotificationsController@store');
     Route::put('/{id}', 'Api\NotificationsController@update');

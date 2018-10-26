@@ -24,9 +24,6 @@ class NotificationsService
      */
     public function all_user($user_id)
     {
-
-        dd($user_id, $this->notification->where('user_id', $user_id)->get());
-
         return $this->notification->where('user_id', $user_id)->get();
     }
 

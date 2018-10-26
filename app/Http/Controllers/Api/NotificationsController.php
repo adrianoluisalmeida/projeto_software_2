@@ -33,16 +33,11 @@ class NotificationsController extends Controller
     /**
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getUser()
+    public function get_user()
     {
         $user = Auth::user();
 
-        dd($user);
-
-
         $result = $this->service->all_user($user->id);
-
-
         return response()->json($result);
     }
 
