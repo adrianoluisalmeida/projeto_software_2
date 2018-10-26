@@ -24,7 +24,7 @@ class NotificationsService
      */
     public function all_user($user_id)
     {
-        return $this->notification->where('user_id', $user_id);
+        return $this->notification->where('user_id', $user_id)->get();
     }
 
     /**
