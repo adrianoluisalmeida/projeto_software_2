@@ -36,6 +36,7 @@ class NotificationsController extends Controller
     public function getUser()
     {
         $user = Auth::user();
+
         $result = $this->service->all_user($user->id);
 
 
