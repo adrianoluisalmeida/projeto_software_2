@@ -41,6 +41,13 @@ class NotificationsController extends Controller
         return response()->json($result);
     }
 
+    public function getTotalNotifications($status){
+        $user = Auth::user();
+
+        $result = $this->service->getTotalNotifications($user->id, $status);
+        return response()->json($result);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

@@ -27,6 +27,12 @@ class NotificationsService
         return $this->notification->where('user_id', $user_id)->get();
     }
 
+    public function getTotalNotifications($user_id, $status){
+        $notifications = $this->notification->where('user_id', $user_id)->where('status', $status)->get();
+
+        return count($notifications);
+    }
+
     /**
      * @param $id
      * @return mixed
