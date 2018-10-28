@@ -142,7 +142,7 @@ class ReportsController extends Controller
         return [
             'title' => $title,
             'report_id' => $post['report_id'],
-            'content' => $post['description'],
+            'content' => $post['content'],
             'user_id' => $user_id
         ];
     }
