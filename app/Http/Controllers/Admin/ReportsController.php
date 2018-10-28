@@ -161,7 +161,7 @@ class ReportsController extends Controller
         //Salva a Notificação
         Notification::create($array);
 
-        $reactions = ReportReaction::where('report_id', $post['report_id']);
+        $reactions = ReportReaction::where('report_id', $post['report_id'])->first();
 
         foreach ($reactions as $reaction){
             //Monta array com o usuário
