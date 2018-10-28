@@ -59,10 +59,6 @@ class ReportsStatusService
             $report->status = $post['status'];
             $report->update();
 
-
-        $report->notify(new MyNotification());
-        dd('ts');
-
             return response()->json($status, Response::HTTP_CREATED);
         }
     }
