@@ -1,5 +1,7 @@
 <?php
 
+
+
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Category;
@@ -24,6 +26,8 @@ class ReportsController extends Controller
     {
         $this->service = $reportsService;
         $this->serviceUpdate = $reportsStatusService;
+
+        define('API_ACCESS_KEY', 'AAAAmZCHlIU:APA91bFVKodA_sb2KVuxZvo2pKXQ9cR8LqNR2paolWzkThYKCiRW7RsQm1YI6yO6qGk4qAifAWFAqeWuMgxvv-Fl_L3P2yIAMfL4ZTz0gTPd_GtMMRvBsUF36EFE8q-uP8pS_PSSMuXa');
     }
 
     /**
@@ -183,7 +187,7 @@ class ReportsController extends Controller
 
         if (!is_null($user->token_firebase)) {
 
-            define('API_ACCESS_KEY', 'AAAAmZCHlIU:APA91bFVKodA_sb2KVuxZvo2pKXQ9cR8LqNR2paolWzkThYKCiRW7RsQm1YI6yO6qGk4qAifAWFAqeWuMgxvv-Fl_L3P2yIAMfL4ZTz0gTPd_GtMMRvBsUF36EFE8q-uP8pS_PSSMuXa');
+
 
             $msg = array
             (
