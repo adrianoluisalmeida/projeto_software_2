@@ -74,7 +74,10 @@ class UserService
         } else {
             $user = User::find($id);
             $user->name = $request->get('name');
-            $user->token_firebase = $request->get('token_firebase');
+
+            if($request->get('token_firebase'))
+                $user->token_firebase = $request->get('token_firebase');
+
             if ($request->get('password')) {
                 $user->password = Hash::make($request->get('password'));
             }
@@ -83,7 +86,8 @@ class UserService
             if(!is_null($roles))
                 $user->syncRoles($roles);
 
-            $user->entities()->sync($entities);
+            if(!is_null($entities))
+                $user->entities()->sync($entities);
 
 //            else
 //                $user->syncRoles([2]); //user group
