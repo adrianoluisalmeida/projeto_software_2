@@ -83,7 +83,7 @@ class NotificationsService
     private function validationNotification($request, $id = null){
 
         return Validator::make($request->all(), [
-            'title' => 'required',
+            'title' => is_null($id) ? 'required' : '',
             'description' => 'max:255'
         ]);
 

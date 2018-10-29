@@ -56,8 +56,8 @@ class NotificationsController extends Controller
      */
     public function store(Request $request)
     {
-        $response = $this->service->store($request);
-        return $response;
+        //$response = $this->service->store($request);
+        //return $response;
     }
 
     /**
