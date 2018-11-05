@@ -25,6 +25,16 @@ Route::group(['middleware' => ['auth:api'], 'prefix' => 'users'], function () {
     Route::put('/', 'Api\UserController@update');
 });
 
+
+Route::group(['middleware' => ['auth:api'], 'prefix' => 'contacts'], function () {
+ 
+    Route::get('/{id}', 'Api\ContactsController@get');
+    Route::get('/user/all', 'Api\ContactsController@get_user');
+    
+    Route::post('/', 'Api\ContactsController@store');
+    //Route::put('/{id}', 'Api\ContactsController@update');
+});
+
 Route::group(['middleware' => ['auth:api'], 'prefix' => 'notifications'], function () {
     Route::get('/{id}', 'Api\NotificationsController@get');
     Route::get('/user/all', 'Api\NotificationsController@get_user');

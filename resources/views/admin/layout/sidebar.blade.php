@@ -13,7 +13,6 @@ $menus = [
             "Usuários" => "admin/users",
             "Grupos/Permissões" => "admin/permissions/roles",
         ],
-//        "permission" => "super_admin"
     ],
     "Entidades" => [
         "url" => "/admin/entities",
@@ -26,8 +25,11 @@ $menus = [
     "Solicitações (Reports)" => [
         "url" => "/admin/reports",
         "icon" => "icon-home"
-    ]
-
+    ],
+    "Contatos" => [
+        "url" => "/admin/contacts",
+        "icon" => "icon-home"
+    ],
 ];
 $urlCurrent = '/' . Request::segment(1) . '/' .  Request::segment(2);
 ?>
