@@ -36,6 +36,8 @@ class ContactsController extends Controller
     {
         $user = Auth::user();
         $result = $this->service->all_user($user->id);
+        $result->load("answers");
+        $result->load("answers.user");
         return response()->json($result);
     }
 

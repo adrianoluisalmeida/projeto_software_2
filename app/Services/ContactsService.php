@@ -78,8 +78,10 @@ class ContactsService
      */
     private function validationContact($request, $id = null){
 
+        $subject = $id ? 'required|max:255' : '';
+        
         return Validator::make($request->all(), [
-            'subject' => 'required|max:255',
+            'subject' => $subject,
             'content' => 'max:255'
         ]);
 

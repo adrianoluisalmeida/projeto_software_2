@@ -15,6 +15,6 @@ return [
     '503' => 'Serviço não está disponível',
     'copyright' => '<a href="cidadeunida.com.br" class="text-white">Cidade Unida</a>',
     'entities' => 'Entidades',
-    'reports' => 'Solicitações'
-
+    'reports' => 'Solicitações',
+    'contacts' => 'Contatos'
 ];

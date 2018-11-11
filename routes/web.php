@@ -104,6 +104,20 @@ Route::group(['middleware' => ['auth', 'authorize'], 'prefix' => 'admin'], funct
         Route::post('/status-update', 'Admin\ReportsController@updateStatus');
     });
 
+    Route::group(['prefix' => 'contacts'], function() {
+
+        Route::get('/', ['uses' => 'Admin\ContactsController@index', 'as' => 'contacts.index']);
+        Route::get('/create', ['uses' => 'Admin\ContactsController@create', 'as' => 'contacts.create']);
+        Route::get('{id}/edit', ['uses' => 'Admin\ContactsController@edit', 'as' => 'contacts.edit']);
+        Route::get('{id}/remove', ['uses' => 'Admin\ContactsController@destroy', 'as' => 'contacts.remove']);
+        Route::get('{id}/view', ['uses' => 'Admin\ContactsController@show', 'as' => 'contacts.view']);
+
+        Route::post('/', 'Admin\ContactsController@store');
+        Route::put('/{id}', 'Admin\ContactsController@update');
+
+        Route::post('/status-update', 'Admin\ContactsController@updateStatus');
+    });
+
 
 });
 

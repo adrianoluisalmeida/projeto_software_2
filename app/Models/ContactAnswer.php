@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
-class Contact extends Model
+class ContactAnswer extends Model
 {
 
-    protected $table = 'contacts';
-    protected $fillable = ['subject', 'content', 'user_id', 'entity_id'];
+    protected $table = 'contacts_answers';
+    protected $fillable = ['subject', 'content', 'user_id', 'contact_id'];
 
     public $timestamps = true;
 
@@ -16,8 +16,8 @@ class Contact extends Model
         return $this->hasOne(User::class, 'id', 'user_id');
     }
 
-    public function answers(){
-        return $this->hasMany(ContactAnswer::class, 'contact_id', 'id');
+    public function contact(){
+        return $this->hasOne(User::class, 'id', 'contact_id');
     }
 
 }

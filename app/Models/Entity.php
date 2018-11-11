@@ -20,4 +20,8 @@ class Entity extends Model
     public function reports(){
         return $this->hasMany(Report::class, 'entity_id', 'id');
     }
+
+    public function contacts(){
+        return $this->hasMany(Contact::class, 'entity_id', 'id');
+    }
 }
