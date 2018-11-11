@@ -8,7 +8,7 @@ class Notification extends Model
 {
 
     protected $table = 'notifications';
-    protected $fillable = ['title', 'content', 'status', 'user_id', 'report_id', 'message_id'];
+    protected $fillable = ['title', 'content', 'status', 'user_id', 'report_id', 'contact_id'];
 
     public $timestamps = true;
 

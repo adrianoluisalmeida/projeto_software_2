@@ -143,7 +143,7 @@ class ContactsController extends Controller
     {
         return [
             'title' => $title,
-            'contact_id' => $post['contact_id'],
+            'contact_id' => (int) $post['contact_id'],
             'content' => $post['content'],
             'user_id' => $user_id
         ];
@@ -155,6 +155,7 @@ class ContactsController extends Controller
 
         //Informações do relato principal
         //$report = Report::find($post['report_id']);
+        
         $contact = Contact::find($post['contact_id']);
 
         //Monta array com o usuário
@@ -162,6 +163,7 @@ class ContactsController extends Controller
         //Envia a notificação
         $this->notification($array);
         //Salva a Notificação
+        //dd($array);
         Notification::create($array);
 
         return true;
