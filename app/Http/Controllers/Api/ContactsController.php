@@ -26,6 +26,8 @@ class ContactsController extends Controller
     public function get($id)
     {
         $result = $this->service->get($id);
+        $result->load("answers");
+        $result->load("answers.user");
         return response()->json($result);
     }
 
