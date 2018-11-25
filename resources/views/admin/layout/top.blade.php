@@ -2,12 +2,12 @@
     <div class="header-inner">
         <div class="page-logo">
             <a href="{{ url("/admin") }}">
-                <h3 style="margin-top: 10px; color: #fff">{{ config('app.name') }}</h3>
-                {{--<img src="/images/admin/logo.png" class="img-responsive col-md-12" style="margin-top: 6px; width: 140px" alt="logo"/>--}}
+                
+                <img src="{{ asset('/img/logo_white.png') }}" width="70px" height="50px" style="margin-top: -2px" alt=""/>
             </a>
         </div>
         <a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <img src="{{ asset('/images/admin/menu-toggler.png') }}" alt=""/>
+            <img src="{{ asset('/img/logo_white.png') }}" alt=""/>
         </a>
         <ul class="nav navbar-nav pull-right">
 

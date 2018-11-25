@@ -15568,7 +15568,7 @@ body.active-side-header.slide-right .page_header_side {
 .cs .ls h4 a:hover,
 .cs .ls h5 a:hover,
 .cs .ls h6 a:hover {
-	color: #ffb200;
+	color: #55b92e;
 }
 
 .cs .ds .greylinks a {
@@ -16566,7 +16566,7 @@ body.active-side-header.slide-right .page_header_side {
 	.sf-menu > li > a:hover:after,
   .sf-menu > li.active > a:after,
   .sf-menu > li.sfHover > a:after {
-		background-color: #00aff0;
+		background-color: #55b92e;
 	}
 
 	.sf-menu li:hover,
@@ -16661,11 +16661,11 @@ body.active-side-header.slide-right .page_header_side {
   .header_white .sf-menu > li.sfHover > a,
   .header_white .sf-menu .current-menu-item > a,
   .header_white .sf-menu .current-menu-ancestor > a {
-		color: #00aff0;
+		color: #55b92e;
 	}
 
 	.header_white .sf-menu > li > a:hover {
-		color: #00aff0;
+		color: #55b92e;
 	}
 
 	.header_white .sf-menu > li + li:before {

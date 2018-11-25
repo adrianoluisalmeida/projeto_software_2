@@ -36456,7 +36456,18 @@ var Menu = function (_Component) {
                     { className: 'row' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
-                        { className: 'col-sm-12 text-center' },
+                        { 'class': 'col-sm-2' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'a',
+                            { href: '/', title: '', 'class': 'logo style-2 mar-4' },
+                            '  ',
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: "img/logo.png" }),
+                            ' '
+                        )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'col-sm-10 text-center' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'nav',
                             { className: 'mainmenu_wrapper' },

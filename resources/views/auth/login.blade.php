@@ -13,8 +13,13 @@
     <div class="content">
         <form class="login-form" method="POST" action="{{ url('/login') }}">
             {{ csrf_field() }}
-
-            <h3 class="form-title">Faça login na sua conta</h3>
+            <div class="col-md-12 text-center">
+                <img src="{{ asset('/img/logo.png') }}" style="margin: 0 auto" alt=""/>
+                <h3 class="form-title">Faça login na sua conta</h3>
+            </div>
+            <div class="clearfix"></div>
+            <br>
+            
 
             <div class="form-group">
                 <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->

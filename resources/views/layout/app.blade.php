@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link href="/css/app.css" rel="stylesheet" type="text/css">
     <link href="/css/theme.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.png"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
@@ -28,8 +29,7 @@
 <div id="canvas">
     <div id="box_wrapper">
 
-        {{--<section id="top" class="page_toplogo ls table_section table_section_md columns_margin_0 section_padding_lg_25">--}}
-        {{--</section>--}}
+        
 
         <header id="menu" class="page_header header_white ls ms">
         </header>

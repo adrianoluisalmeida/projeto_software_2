@@ -16,6 +16,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.png"/>
 
     <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

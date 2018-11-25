@@ -33,9 +33,17 @@ export default class Menu extends Component {
 
                 <div className="container">
                     <div className="row">
-                        <div className="col-sm-12 text-center">
+                    
+                        <div class="col-sm-2"> 
+                            <a href="/" title="" class="logo style-2 mar-4">  <img src={"img/logo.png"}/> </a> 
+                        </div>
+                        <div className="col-sm-10 text-center">
+
+
 
                             <nav className="mainmenu_wrapper">
+
+                               
 
                                 <ul className="mainmenu nav sf-menu">
                                     {
