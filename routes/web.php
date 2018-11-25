@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+
+//Route::get('/admin', ['uses' => 'HomeController@index', 'as' => 'home']);
+
 
 Route::get('/quem-somos', ['uses' => 'HomeController@about', 'as' => 'about']);
 Route::get('/testes', ['uses' => 'HomeController@tests', 'as' => 'teste']);

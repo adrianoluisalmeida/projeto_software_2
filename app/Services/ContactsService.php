@@ -61,6 +61,7 @@ class ContactsService
         $validator = $this->validationContact($request, $id);
 
         if ($validator->fails()) {
+            \Session::flash('errors', $validator->errors());
             return response()->json($validator->errors(), Response::HTTP_BAD_REQUEST);
         } else {
 
@@ -76,13 +77,13 @@ class ContactsService
      * @param $request
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    private function validationContact($request, $id = null){
+    public function validationContact($request, $id = null){
 
         $subject = $id ? 'required|max:255' : '';
         
         return Validator::make($request->all(), [
             'subject' => $subject,
-            'content' => 'max:255'
+            'content' => 'required|max:255'
         ]);
 
     }

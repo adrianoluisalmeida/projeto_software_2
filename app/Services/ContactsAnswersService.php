@@ -46,10 +46,12 @@ class ContactsAnswersService
     {
 
         //dd($post);
+
         $validator = $this->validation($post);
         $contact_id = $post['contact_id'];
         //dd($validator->errors());
         if ($validator->fails()) {
+            \Session::flash('errors', $validator->errors());
             return response()->json($validator->errors(), Response::HTTP_BAD_REQUEST);
         } else {
 

@@ -128,15 +128,27 @@ class ContactsController extends Controller
 
         $post = $request->all();
 
-        $this->saveNotification($post);
+        $validator = $this->service->validationContact($request);
 
-        $post['user_id'] = $user->id;
-        $result = $this->serviceUpdate->store($post);
+        //dd($validator->fails());
+     
+        //dd($validator->fails());
 
-        if ($result->getStatusCode() == 201)
-            return redirect()->back()->with('message-success', __('messages.success.update'));
-        else
+        if ($validator->fails()) {
+            \Session::flash('errors', $validator->errors());
             return redirect()->back()->with('message-error', __('messages.error.update'))->withInput();
+        }else{
+            $this->saveNotification($post);
+
+            $post['user_id'] = $user->id;
+    
+            $result = $this->serviceUpdate->store($post);
+            if ($result->getStatusCode() == 201)
+                return redirect()->back()->with('message-success', __('messages.success.update'));
+            else
+                return redirect()->back()->with('message-error', __('messages.error.update'))->withInput();
+        }
+        
     }
 
     public function getArrayNotification($post, $title, $user_id)

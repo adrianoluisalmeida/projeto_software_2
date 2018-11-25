@@ -64,6 +64,7 @@ class ReportsService
         $validator = $this->validationReport($request);
 
         if ($validator->fails()) {
+            \Session::flash('errors', $validator->errors());
             return response()->json($validator->errors(), Response::HTTP_BAD_REQUEST);
         } else {
 
@@ -134,6 +135,7 @@ class ReportsService
         $validator = $this->validationReport($request, $id);
 
         if ($validator->fails()) {
+            \Session::flash('errors', $validator->errors());
             return response()->json($validator->errors(), Response::HTTP_BAD_REQUEST);
         } else {
 

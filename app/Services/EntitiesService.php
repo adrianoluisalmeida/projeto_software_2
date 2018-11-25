@@ -56,6 +56,7 @@ class EntitiesService
         $validator = $this->validation($request);
 
         if ($validator->fails()) {
+            \Session::flash('errors', $validator->errors());
             return response()->json($validator->errors(), Response::HTTP_BAD_REQUEST);
         } else {
             $entity = Entity::create($request->all());
@@ -68,6 +69,7 @@ class EntitiesService
     {
         $validator = $this->validation($request, $id);
         if ($validator->fails()) {
+            \Session::flash('errors', $validator->errors());
             return response()->json($validator->errors(), Response::HTTP_BAD_REQUEST);
         } else {
             Entity::find($id)

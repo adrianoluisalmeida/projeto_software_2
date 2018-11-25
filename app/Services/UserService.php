@@ -41,6 +41,7 @@ class UserService
         $entities = $request->get('entity');
 
         if ($validator->fails()) {
+            \Session::flash('errors', $validator->errors());
             return response()->json($validator->errors(), Response::HTTP_BAD_REQUEST);
         } else {
 
@@ -70,6 +71,7 @@ class UserService
         $entities = $request->get('entity');
 
         if ($validator->fails()) {
+            \Session::flash('errors', $validator->errors());
             return response()->json($validator->errors(), Response::HTTP_BAD_REQUEST);
         } else {
             $user = User::find($id);

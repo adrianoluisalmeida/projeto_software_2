@@ -2,10 +2,10 @@
 $menus = [
     "Dashboard" => [
         "url" => "/admin",
-        "icon" => "icon-home"
+        "icon" => "fa fa-home"
     ],
     "Administração" => [
-        "icon" => "icon-settings",
+        "icon" => "fa fa-cogs",
         "base_url" => "/admin/roles",
         "sub" => [
             "Grupos" => "admin/roles",
@@ -16,19 +16,19 @@ $menus = [
     ],
     "Entidades" => [
         "url" => "/admin/entities",
-        "icon" => "icon-home"
+        "icon" => "fa fa-building"
     ],
     "Categorias" => [
         "url" => "/admin/categories",
-        "icon" => "icon-home"
+        "icon" => "fa fa-list-ul"
     ],
     "Solicitações (Reports)" => [
         "url" => "/admin/reports",
-        "icon" => "icon-home"
+        "icon" => "fa fa-bell"
     ],
     "Contatos" => [
         "url" => "/admin/contacts",
-        "icon" => "icon-home"
+        "icon" => "fa fa-envelope"
     ],
 ];
 $urlCurrent = '/' . Request::segment(1) . '/' .  Request::segment(2);
