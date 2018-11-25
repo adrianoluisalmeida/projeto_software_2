@@ -24,9 +24,7 @@
                     <i class="fa fa-angle-down"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li>
-                        <a href="{{ url('admin/users/my') }}"><i class="fa fa-user"></i> Editar Perfil</a>
-                    </li>
+                  
                     <li class="divider">
                     </li>
                     <li>
