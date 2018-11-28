@@ -39,7 +39,7 @@
 
                             <div class="form-group">
                                 {!! Form::label('status', 'Situação * ', ['class' => 'control-label']) !!}
-                                {!! Form::select('status', [1 => 'Em Aberto', 2 => 'Em andamento', 3 => 'Concluído'], {{ isset($report) ? $report->status : null }}, ['class' => 'form-control']) !!}
+                                {!! Form::select('status', [1 => 'Em Aberto', 2 => 'Em andamento', 3 => 'Concluído'], isset($report) ? $report->status : null, ['class' => 'form-control']) !!}
                             </div>
                             <div class="clearfix"></div>
                         </div>
