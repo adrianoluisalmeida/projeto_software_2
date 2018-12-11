@@ -37,13 +37,16 @@ class ReportsController extends Controller
      */
     public function index()
     {
-
         $user = Auth::user();
         $entities = $user->entities;
+        $categories = Category::all();
         $status = null;
         if (isset($_GET['status']))
             $status = $_GET['status'] > 0 ? $_GET['status'] : null;
-        return view('admin/reports/index', compact('entities','status'));
+        $category = null;
+        if (isset($_GET['category']))
+            $category = $_GET['category'] > 0 ? $_GET['category'] : null;
+        return view('admin/reports/index', compact('entities','status','categories', 'category'));
     }
 
     /**

@@ -26,6 +26,10 @@ class Report extends Model
         return $this->hasMany(ReportReaction::class);
     }
 
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
+
     public function statusDescr(){
         switch ($this->status){
             case 1: return 'Aberta';

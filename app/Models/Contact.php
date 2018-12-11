@@ -20,4 +20,8 @@ class Contact extends Model
         return $this->hasMany(ContactAnswer::class, 'contact_id', 'id');
     }
 
+    public function answered(){
+        return (sizeof($this->answers) > 0);
+    }
+
 }
