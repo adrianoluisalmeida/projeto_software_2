@@ -40,8 +40,10 @@ class ReportsController extends Controller
 
         $user = Auth::user();
         $entities = $user->entities;
-
-        return view('admin/reports/index', compact('entities'));
+        $status = null;
+        if (isset($_GET['status']))
+            $status = $_GET['status'] > 0 ? $_GET['status'] : null;
+        return view('admin/reports/index', compact('entities','status'));
     }
 
     /**

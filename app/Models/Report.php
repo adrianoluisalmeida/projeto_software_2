@@ -26,6 +26,26 @@ class Report extends Model
         return $this->hasMany(ReportReaction::class);
     }
 
+    public function statusDescr(){
+        switch ($this->status){
+            case 1: return 'Aberta';
+            case 2: return 'Em andamento';
+            case 3: return 'Concluída';
+        }
+        return '';
+    }
 
+    public function score(){
+        $pc = sizeof($this->positives);
+        $nc = sizeof($this->negatives);
+        return $pc - $nc;
+    }
 
+    public function positivesCount(){
+        return sizeof($this->positives);
+    }
+
+    public function negativesCount(){
+        return sizeof($this->negatives);
+    }
 }
