@@ -44,7 +44,7 @@
                     <td style="width: 10%;">Categoria</td>
                     <td>Descrição</td>
                     <td>Endereço</td>
-                    <td style="width: 10%;">Situação</td>
+                    <td style="width: 12%;">Situação</td>
                     <td style="width: 5%;"><i class="fa fa-thumbs-up"></i></td>
                     <td style="width: 5%;"><i class="fa fa-thumbs-down"></i></td>
                 </tr>
